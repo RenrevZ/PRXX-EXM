@@ -68,7 +68,7 @@
 
          <Link :class="{
                   'flex items-center p-2 text-gray-900 dark:text-white hover:text-slate-400 group': true,
-                  'bg-sky-400 text-white': $page.url === '/Video'
+                  'bg-sky-400 text-white': $page.url === '/logout'
                }" :href="route('logout')" method="post" as="button" preserve-scroll >
              <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 hover:text-slate-400 dark:text-gray-400" 
                   fill="none" 
