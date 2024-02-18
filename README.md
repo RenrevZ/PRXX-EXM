@@ -2,8 +2,8 @@
 
 > NOTE! THIS APPLICATION ONLY TESTED IN MYSQL AS DATABASE
 - CLONE THIS REPOSITORY
-- GOT TO CLONED FOLDER AND RUN
 - RENAME .env.example to .env
+- GO TO CLONED FOLDER AND RUN
 > composer install
 > 
 > npm install
@@ -15,6 +15,7 @@
 - THEN RUN 
 -
 > npm run dev
+> 
 > php artisan serve
 
 -
