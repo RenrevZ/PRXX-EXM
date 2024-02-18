@@ -16,13 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 
-Route::get('/fetchAllProduct', [ProductApiController::class, 'getAllproduct']);
-Route::get('/fetchAllCategories', [ProductApiController::class, 'getAllCategories']);
-Route::post('/getSingleCategory', [ProductApiController::class, 'getSingleCategory']);
-Route::get('/searchProduct/{search}', [ProductApiController::class, 'searchProduct']);
-Route::get('/fetchAllproductWithPhoto/{id}', [ProductApiController::class, 'getProductWithPhoto']);
-Route::delete('/deleteProduct/{id}', [ProductController::class, 'destroy']);
+    Route::get('/fetchAllProduct', [ProductApiController::class, 'getAllproduct']);
+    Route::get('/fetchAllCategories', [ProductApiController::class, 'getAllCategories']);
+    Route::post('/getSingleCategory', [ProductApiController::class, 'getSingleCategory']);
+    Route::get('/searchProduct/{search}', [ProductApiController::class, 'searchProduct']);
+    Route::get('/fetchAllproductWithPhoto/{id}', [ProductApiController::class, 'getProductWithPhoto']);
+    Route::delete('/deleteProduct/{id}', [ProductController::class, 'destroy']);
+});

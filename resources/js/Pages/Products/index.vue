@@ -104,7 +104,10 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DeleteModal from '@/Components/DeleteModal.vue';
 import AlertMessage from '@/Components/AlertMessage.vue';
 import { Link } from '@inertiajs/vue3';
+import Cookies from 'js-cookie';
 
+
+console.log('token:',Cookies.get('token'))
 
 // STORE STATES
 const { products,totalPages,currentPage,categories} = storeToRefs(useProductStore())
