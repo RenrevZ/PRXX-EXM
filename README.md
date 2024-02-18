@@ -5,7 +5,9 @@
 - GOT TO CLONED FOLDER AND RUN
 - RENAME .env.example to .env
 > composer install
+> 
 > npm install
+> 
 > php artisan key:generate
 - INSERT YOUR DB CREDENTIALS ON .ENV
 - AFTER PROVIDING THE DETAILS NEEDED RUN
