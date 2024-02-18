@@ -30,14 +30,18 @@ export const useProductStore = defineStore('products', {
                 this.totalPages = response.data.products.last_page
                 this.currentRequest = 'fetchAll'
             } catch (error) {
-                console.error('Error fetching data:', error)
+                this.message.error = error
             }
         },
 
         // FETCH ALL CATEGORIES
         async getAllCategory() {
-            const response = await axios.get('/api/fetchAllCategories')
-            this.categories = response.data.category
+            try {
+                const response = await axios.get('/api/fetchAllCategories')
+                this.categories = response.data.category
+            } catch (error) {
+                this.message.error = error
+            }
         },
 
         // FETCH SINGLE CATEGORY
@@ -55,7 +59,7 @@ export const useProductStore = defineStore('products', {
                 this.totalPages = response.data.products.last_page
                 this.currentRequest = 'singleCategory'
             } catch (error) {
-                console.error('Error fetching data:', error)
+                this.message.error = error
             }
         },
 
@@ -70,7 +74,7 @@ export const useProductStore = defineStore('products', {
                 this.totalPages = response.data.product.last_page
                 this.currentRequest = 'searchProduct'
             } catch (error) {
-                console.error('Error fetching data:', error)
+                this.message.error = error
             }
         },
 
